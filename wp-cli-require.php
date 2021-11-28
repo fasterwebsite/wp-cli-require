@@ -17,7 +17,7 @@ declare(strict_types=1);
 
 namespace fasterwebsite\wp\cli\require;
 
-add_action('cli_init', static function() : void (){
+add_action('cli_init', static function() : void {
     require_once __DIR__ . '/RequireCommand.php';
     WP_CLI::add_command('require', RequireCommand::class);
 });
