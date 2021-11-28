@@ -1,7 +1,7 @@
 {
     "name": "fasterwebsite/wp-cli-require",
     "description": "Like 'wp eval <file>' but using require()'",
-    "type": "library",
+    "type": "wordpress-plugin",
     "require": {
         "wp-cli/wp-cli": "^2.5"
     },
