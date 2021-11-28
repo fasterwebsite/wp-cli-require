@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace fasterwebsite\wp\cli\require;
+namespace fasterwebsite\wp\cli\require_command;
 
 use WP_CLI\Utils;
 use WP_CLI_Command;
