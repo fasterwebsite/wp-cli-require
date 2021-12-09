@@ -48,8 +48,11 @@ class RequireCommand extends WP_CLI_Command {
      * ## EXAMPLES
      *
      *     wp eval-file my-code.php value1 value2
+     *
+     * @param array{0: string} $args
+     * @param array<string, string> $assoc_args
      */
-    public function __invoke($args, $assoc_args) {
+    public function __invoke( array $args, array $assoc_args ): void {
         $file = array_shift($args);
 
         if (!file_exists($file)) {
@@ -60,7 +63,7 @@ class RequireCommand extends WP_CLI_Command {
             WP_CLI::get_runner()->load_wordpress();
         }
 
-        self::execute_eval($file, $args);
+        self::executeEval($file, $args);
     }
 
     /**
@@ -69,7 +72,7 @@ class RequireCommand extends WP_CLI_Command {
      * @param string $file Filepath to execute, or - for STDIN.
      * @param mixed  $args Array of positional arguments to pass to the file.
      */
-    private static function execute_eval($file, $args) {
+    private static function executeEval( string $file, $args ): void {
         require($file);
     }
 }
